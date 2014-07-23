@@ -95,3 +95,5 @@ gem "kramdown"
 gem 'open-uri-cached'
 
 gem 'font-awesome-middleman'
+
+gem 'io-console'

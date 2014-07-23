@@ -6,7 +6,7 @@ domain: manageiq.org
 #has_comments: true
 
 # Optional logo. If commented out, it will not be used.
-logo: logo.svg
+logo: rad-beveled.png
 
 # optional, set to true if your site uses SSL by default
 #ssl: true
@@ -20,13 +20,13 @@ logo: logo.svg
 
 # Manual copyright string, to override the automatic one
 # FIXME: Remove logo link from here and do it properly
-copyright: "&copy; 2014 ManageIQ. Sponsored by Red Hat, Inc. &nbsp; <a href='/logo/' class='logo-link'>Logo</a>"
+copyright: "&copy; 2014 RAD. Sponsored by Red Hat, Inc. &nbsp; <a href='/logo/' class='logo-link'>Logo</a>"
 
 legal: {text: "Legal & Privacy", link: "/legal/"}
 
 
 # Location where this repo exists on github
-github: ManageIQ/manageiq.org
+github: pdmack/manageiq.org
 
 
 # Optional footer links
@@ -47,13 +47,13 @@ github: ManageIQ/manageiq.org
 # To have page-specific tags added, please add a YAML list to "tags:"
 # in that page's frontmatter block (the part at the top between ---)
 keywords:
-  - ManageIQ
-  - Virtual Machine
-  - Cloud
+  - Spark
+  - Mesos
+  - Analytics
+  - Big Data
   - Open Source
   - Free Software
   - Red Hat
-  - CloudForms
 
 ##
 # Deployment: OpenShift

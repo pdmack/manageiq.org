@@ -9,14 +9,14 @@ page_classes: header-page download-page
     %section.col-md-12
 
       %h2{class: (defined? deploy_type) ? "with-type" : "without-type"}
-        Download and install ManageIQ
+        Download and install RAD
         - if defined? deploy_type
           for
           %span.product-name
             = deploy_name
 
       :markdown
-        Getting started with ManageIQ is as simple as following three
+        Getting started with RAD is as simple as following three
         steps. You'll be up and running in under 30 minutes.
 
 
@@ -62,75 +62,22 @@ page_classes: header-page download-page
 
         - case deploy_type
 
-          - when 'ovirt'
-            :markdown
-              1.  [Download ManageIQ for oVirt](http://manageiq.org/download/manageiq-ovirt-devel.ova){: .download-link}
-                  to your local computer.
-
-              2.  When the file has finished downloading, upload it to
-                  an export domain on your oVirt instance by running the
-                  following command locally:
-
-                  ~~~bash
-                  engine-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_ENGINE_HOST upload -v -m manageiq-ovirt-devel.ova
-                  ~~~
-
-              3.  Navigate to the "Template Import" tab of your export
-                  domain in your oVirt admin console, and import the
-                  ManageIQ image template you uploaded.
-
-              4.  Create a new virtual machine from the ManageIQ
-                  template, and start the VM.
-
-
-          - when 'rhev'
-            :markdown
-              1.  [Download ManageIQ for Red Hat Enterprise Virtualization](http://manageiq.org/download/manageiq-ovirt-devel.ova){: .download-link}
-                  to your local computer.
-
-              2.  When the file has finished downloading, upload it to an
-                  export domain on your RHEV instance by running the
-                  following command locally:
-
-                  ~~~bash
-                  rhevm-image-uploader -e $YOUR_EXPORT_DOMAIN --engine=$YOUR_RHEVM_HOST upload -v -m manageiq-ovirt-devel.ova
-                  ~~~
-
-              3.  Navigate to the "Template Import" tab of your export
-                  domain in your RHEV-M console, and import the
-                  ManageIQ image template you uploaded.
-
-              4.  Create a new virtual machine from the ManageIQ
-                  template, and start the VM.
-
 
           - when 'openstack'
             :markdown
-              1.  Download ManageIQ directly to OpenStack by running
+              1.  Download RAD directly to OpenStack by running
                   this command:
 
                   ~~~bash
-                  curl -O http://manageiq.org/download/manageiq-openstack-devel.qc2 && \
-                  glance image-create --name "ManageIQ-devel" \
+                  curl -O http://rad.redhat.com/download/rad-openstack-devel.qc2 && \
+                  glance image-create --name "RAD-devel" \
                   --is-public True --disk-format qcow2 \
-                  --container-format=bare --file manageiq-openstack-devel.qc2
+                  --container-format=bare --file rad-openstack-devel.qc2
                   ~~~
 
-              2.  Launch a new instance from the ManageIQ image. ManageIQ needs a
+              2.  Launch a new instance from the RAD image. RAD needs a
                   minimum of 6GB RAM and a 45GB persistent disk, so choose or create
                   an instance flavor accordingly.
-
-          - when 'vmware'
-            :markdown
-              1.  From the vSphere client, click File → Deploy OVF Template
-                  (or Actions → Deploy OVF Template from the vSphere Web client).
-
-              2.  Enter `http://manageiq.org/download/manageiq-vsphere-devel.ova`
-                  in the URL field of the resulting dialog window, and select
-                  the location, host and storage you wish to use for the ManageIQ VM.
-
-              3.  Check the box "Power on after deployment" to start the VM
-                  once the deployment is complete.
 
 
         :markdown
